@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"./trans"
+	"./pack"
 )
 var twoPi=2*trans.Pi
 
