@@ -53,6 +53,21 @@ func compare_gtid(master_gtid,slave_gtid string)(bool){
 	}
 	return false
 }
+func read_only_on(dsn string)(){
+        db,_:=sql.Open("mysql",dsn)
+        defer db.Close()
+	db.Query("set global read_only=1")
+}
+func read_only_off(dsn string)(){
+        db,_:=sql.Open("mysql",dsn)
+        defer db.Close()
+	db.Query("set global read_only=1")
+}
+func stop_slave(dsn string)(){
+        db,_:=sql.Open("mysql",dsn)
+        defer db.Close()
+	db.Query("stop slave")
+}
 func main(){
 	user:=flag.String("db_user","admin","Database User Name")
 	passwd:=flag.String("db_passwd","1","Database User Password")
@@ -67,10 +82,13 @@ func main(){
 	old_slave_status:=ping_db(old_slave_dsn)
 	if old_master_status==false||old_slave_status==false{
 		fmt.Printf("Database Alive Check Failed\n")
+		return
 	}
 	old_master_gtid:=get_gtid(old_master_dsn)
 	old_slave_gtid:=get_gtid(old_slave_dsn)
 	if compare_gtid(old_master_gtid,old_slave_gtid)==false{
 		fmt.Printf("Exiting!\n")
 	}
+	read_only_on(old_slave_dsn)
+	stop_slave(old_slave_dsn)
 }
