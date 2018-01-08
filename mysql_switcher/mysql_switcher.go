@@ -19,27 +19,32 @@ func ping_db(dsn string)(alive bool){
 	db,err:=sql.Open("mysql",dsn)
 	if err!=nil{
 		alive=false
+		fmt.Printf("Database %s is dead or Access Denied!\n",dsn)
 		return alive
 	}
 	defer db.Close()
 	err=db.Ping()
 	if err!=nil{
 		alive=false
+		fmt.Printf("Database %s is dead or Access Denied!\n",dsn)
 		return alive
 	}
+	fmt.Printf("Database %s is alive\n",dsn)
 	return alive
 }
 func main(){
 	user:=flag.String("db_user","admin","Database User Name")
 	passwd:=flag.String("db_passwd","1","Database User Password")
-	host:=flag.String("db_host","127.0.0.1","Database Host")
-	port:=flag.String("db_port","3306","Database Port")
+	master_host:=flag.String("master_db_host","127.0.0.1","Now Master Database Host")
+	master_port:=flag.String("master_db_port","3306","Now Master Database Port")
+	slave_host:=flag.String("salve_db_host","127.0.0.1","Now Slave Database Host")
+	slave_port:=flag.String("slave_db_port","3307","Now Slave Database Port")
 	flag.Parse()
-	dsn:=get_dsn(*user,*passwd,*host,*port)
-	status:=ping_db(dsn)
-	if status==true{
-		fmt.Printf("Database %s:%s is alive\n",*host,*port)
-	}else{
-		fmt.Printf("Database %s:%s is dead or access denied\n",*host,*port)
+	old_master_dsn:=get_dsn(*user,*passwd,*master_host,*master_port)
+	old_slave_dsn:=get_dsn(*user,*passwd,*slave_host,*slave_port)
+	old_master_status:=ping_db(old_master_dsn)
+	old_slave_status:=ping_db(old_slave_dsn)
+	if old_master_status==false||old_slave_status==false{
+		fmt.Printf("Database Alive Check Failed\n")
 	}
 }
