@@ -43,6 +43,16 @@ func get_gtid(dsn string)(string){
 	fmt.Printf("Database %s has GTID: %s\n",dsn,Executed_Gtid_Set)
 	return fmt.Sprintf("%s",Executed_Gtid_Set)
 }
+func compare_gtid(master_gtid,slave_gtid string)(bool){
+	if strings.EqualFold(master_gtid,slave_gtid){
+		fmt.Printf("Gtid Consistent\n")
+		return true
+	}else{
+		fmt.Printf("Gtid Not Consistent\n")
+		return false
+	}
+	return false
+}
 func main(){
 	user:=flag.String("db_user","admin","Database User Name")
 	passwd:=flag.String("db_passwd","1","Database User Password")
@@ -60,7 +70,7 @@ func main(){
 	}
 	old_master_gtid:=get_gtid(old_master_dsn)
 	old_slave_gtid:=get_gtid(old_slave_dsn)
-	if strings.EqualFold(old_master_gtid,old_slave_gtid){
-		fmt.Printf("GTID Consistent\n")
+	if compare_gtid(old_master_gtid,old_slave_gtid)==false{
+		fmt.Printf("Exiting!\n")
 	}
 }
