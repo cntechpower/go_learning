@@ -7,10 +7,10 @@ import (
 
 func main() {
 	fmt.Println("In main()")
-	//go longWait()
-	//go shortWait()
-	longWait()
-	shortWait()
+	go longWait()
+	go shortWait()
+	//longWait()
+	//shortWait()
 	fmt.Println("About to sleep in main()")
 	time.Sleep(10 * 1e9)
 	fmt.Println("At the end of main()")
