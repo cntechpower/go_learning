@@ -19,7 +19,7 @@ func main() {
 		} else {
 			end := time.Now()
 			delta := end.Sub(start)
-			fmt.Printf("Exec time is: %s\n", delta)
+			fmt.Printf("Exec times is: %s\n", delta)
 			os.Exit(0)
 		}
 	}
