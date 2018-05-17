@@ -1,8 +1,10 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
-	"fmt"
+	//"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"io/ioutil"
 	"time"
 )
@@ -78,15 +80,29 @@ type issueStruct struct {
 }
 
 func main() {
-	var issue_struct []issueStruct
-	issue_json, err := ioutil.ReadFile("50_issue.src")
+	var issue_struct_list []issueStruct
+	issue_json, err := ioutil.ReadFile("1000_issues.src")
 	if err != nil {
 		panic(err)
 	}
-	err = json.Unmarshal(issue_json, &issue_struct)
+	err = json.Unmarshal(issue_json, &issue_struct_list)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%v\n", issue_struct)
+	db, err := sql.Open("mysql", "admin:admin@(127.0.0.1:57222)/")
+	if err != nil {
+		panic(err)
+	}
+	stmt, err := db.Prepare("replace into issues.umc(id,project_id,title,create_time,web_url)values(?,?,?,?,?) ")
+	if err != nil {
+		panic(err)
+	}
+	for _, issue_struct := range issue_struct_list {
+		_, err = stmt.Exec(issue_struct.ID, issue_struct.ProjectID, issue_struct.Title, issue_struct.CreatedAt, issue_struct.WebURL)
+		if err != nil {
+			panic(err)
+		}
+	}
+	defer db.Close()
 
 }
