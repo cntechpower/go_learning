@@ -21,8 +21,8 @@ func main() {
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
-	body1 := string(body)
-	fmt.Printf(body1)
+	//body1 := string(body)
+	//fmt.Printf(body1)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -33,5 +33,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	//fmt.Printf("%v\n", c)
+	fmt.Printf("%v\n", c)
 }
