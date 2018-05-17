@@ -1,8 +1,10 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"io/ioutil"
 	"time"
 )
@@ -87,6 +89,19 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%v\n", issue_struct)
+	//fmt.Println(issue_struct)
+	db, err := sql.Open("mysql", "admin:admin@(127.0.0.1:57222)/")
+	if err != nil {
+		panic(err)
+	}
+	stmt, err := db.Prepare("replace into issues.umc(id,project_id,title,create_time,web_url)values(?,?,?,?,?) ")
+	if err != nil {
+		panic(err)
+	}
+	_, err = stmt.Exec(issue_struct.ID, issue_struct.ProjectID, issue_struct.Title, issue_struct.CreatedAt, issue_struct.WebURL)
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
 
 }
