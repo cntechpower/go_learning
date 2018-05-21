@@ -24,6 +24,7 @@
 	<option value="uguard">uguard</option> 
 	<option value="ulogstash">usql</option> 
 	<option value="pm-work-log">pm-work-log</option> 
+	<option value="zhangshenbo">zhangshenbo</option> 
 	</select> 
         关键字<input type="text" name="keyword"/>
         <input type="submit" value="查询"/>
@@ -36,6 +37,7 @@
         <td width="80">项目</td>
         <td width="50" >ID</td>
         <td width="300" >标题</td>
+        <td width="50" >状态</td>
         <td width="200" >URL</td>
     </tr>
 <?php
@@ -54,6 +56,7 @@ SELECT
     p.name AS project_name,
     i.iid AS issue_id,
     i.title AS issue_title,
+    i.state AS issue_state,
     'http://10.186.18.21/universe/'
         || p.name
         || '/issues/'
@@ -83,7 +86,8 @@ EOF;
         <td>{$row[0]}</td> 
         <td>{$row[1]}</td>
         <td>{$row[2]}</td>
-        <td><a href=\"{$row[3]}\" target=\"_blank\">{$row[3]}</a></td>
+        <td>{$row[3]}</td>
+        <td><a href=\"{$row[4]}\" target=\"_blank\">{$row[4]}</a></td>
         
     </tr>";
    }
