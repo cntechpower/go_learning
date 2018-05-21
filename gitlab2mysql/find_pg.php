@@ -7,7 +7,7 @@
 
 <body>
 
-<form action="find_pg.php" method="post">
+<form action="find_pg2.php" method="post">
     <div>
 	项目
 	<select name="project"> 
@@ -84,7 +84,7 @@ EOF;
         <td>{$row[0]}</td> 
         <td>{$row[1]}</td>
         <td>{$row[2]}</td>
-        <td>{$row[3]}</td>
+        <td><a href=\"{$row[3]}\" target=\"_blank\">{$row[3]}</a></td>
         
     </tr>";
    }
