@@ -6,6 +6,7 @@ import (
 	//"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"io/ioutil"
+	"net/http"
 	"time"
 )
 
@@ -81,7 +82,11 @@ type issueStruct struct {
 
 func main() {
 	var issue_struct_list []issueStruct
-	issue_json, err := ioutil.ReadFile("1000_issues.src")
+	issue_http, err := http.Get("http://10.186.18.21/api/v3/projects/50/issues?private_token=f53JVTmqyoHbisx1NFf_")
+	if err != nil {
+		panic(err)
+	}
+	issue_json, err := ioutil.ReadAll(issue_http.Body)
 	if err != nil {
 		panic(err)
 	}
