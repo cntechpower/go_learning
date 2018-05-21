@@ -6,7 +6,7 @@
 
 <body>
 
-<form action="issue_finder.php" method="post">
+<form action="index.php" method="post">
     <div>
 	项目
 	<select name="project"> 
