@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>UDP bug 查询系统</title>
@@ -7,7 +6,7 @@
 
 <body>
 
-<form action="find_pg.php" method="post">
+<form action="issue_finder.php" method="post">
     <div>
 	项目
 	<select name="project"> 
@@ -26,7 +25,7 @@
 	<option value="ulogstash">usql</option> 
 	<option value="pm-work-log">pm-work-log</option> 
 	</select> 
-        关键字<input type="text" name="name"/>
+        关键字<input type="text" name="keyword"/>
         <input type="submit" value="查询"/>
 
     </div>
@@ -34,9 +33,9 @@
 </form>
 <table border="1" cellspacing="0" cellpadding="0">
     <tr>
-        <td width="200">项目</td>
-        <td width="200" >issue ID</td>
-        <td width="200" >标题</td>
+        <td width="80">项目</td>
+        <td width="50" >ID</td>
+        <td width="300" >标题</td>
         <td width="200" >URL</td>
     </tr>
 <?php
@@ -45,8 +44,8 @@
    $dbname      = "dbname=gitlabhq_production";
    $credentials = "user=readonly password=readonly";
 
-   $db = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$db){
+   $conn = pg_connect( "$host $port $dbname $credentials"  );
+   if(!$conn){
       echo "Error : Unable to open database\n";
    }
 
@@ -69,11 +68,11 @@ WHERE
 
 EOF;
 
-   $ret = pg_prepare($db, "query_all",$sql);
-   $keyword_wildcard=sprintf("%%%s%%",$_POST["name"]);
+   $ret = pg_prepare($conn, "query_all",$sql);
+   $keyword_wildcard=sprintf("%%%s%%",$_POST["keyword"]);
    echo "已为您使用如下条件搜索: <br>";
    echo "项目: ",$_POST["project"],"<br>关键字: ",$keyword_wildcard;
-   $ret=pg_execute($db,"query_all",array($_POST["project"],$keyword_wildcard,$keyword_wildcard));
+   $ret=pg_execute($conn,"query_all",array($_POST["project"],$keyword_wildcard,$keyword_wildcard));
    if(!$ret){
       echo pg_last_error($db);
       exit;
