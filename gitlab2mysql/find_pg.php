@@ -7,7 +7,7 @@
 
 <body>
 
-<form action="find_pg2.php" method="post">
+<form action="find_pg.php" method="post">
     <div>
 	项目
 	<select name="project"> 
