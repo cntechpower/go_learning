@@ -1,57 +1,3 @@
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>UDP bug 查询系统</title>
-</head>
-
-<body>
-
-<form action="index.php" method="post">
-    <div>
-	项目
-	<select name="project"> 
-	<option value="%">any</option>
-<?php
-   $host        = "host=10.186.18.21";
-   $port        = "port=5432";
-   $dbname      = "dbname=gitlabhq_production";
-   $credentials = "user=readonly password=readonly";
-
-   $conn = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$conn){
-      echo "Error : Unable to open database\n";
-   }
-
-   $sql =<<<EOF
-   select name from projects order by name;
-EOF;
-   $ret = pg_query($conn,$sql);
-   if(!$ret){
-      echo pg_last_error($db);
-      exit;
-   }
-   while($row = pg_fetch_row($ret))
-   {
-      echo "<option value=\"{$row[0]}\">{$row[0]}</option>";
-   }
-   pg_close(db);
-?>
-
-	</select> 
-        关键字<input type="text" name="keyword"/>
-        <input type="submit" value="查询"/>
-
-    </div>
-
-</form>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tr>
-        <td width="80">项目</td>
-        <td width="50" >ID</td>
-        <td width="300" >标题</td>
-        <td width="50" >状态</td>
-        <td width="200" >URL</td>
-    </tr>
 <?php
    $host        = "host=10.186.18.21";
    $port        = "port=5432";
@@ -105,7 +51,4 @@ EOF;
    }
    pg_close($db);
 ?>
-</table>
-</body>
-</html>
 
