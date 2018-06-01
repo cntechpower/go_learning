@@ -22,7 +22,30 @@
    }
 
    $sql =<<<EOF
-select p.name,n.name||'/'||p.name from projects p,namespaces n where p.namespace_id=n.id  and n.name in ('universe','autotest') order by n.name||'/'||p.name;
+SELECT 
+    p.name, n.name || '/' || p.name
+FROM
+    projects p,
+    namespaces n
+WHERE
+    p.namespace_id = n.id
+        AND n.name IN ('universe' , 'autotest')
+        AND p.name NOT IN ('wechat,' , 'go-sql-driver',
+        'consul',
+        'dev-research',
+        'grafana',
+        'docker',
+        'urep_booster',
+        'elastic-beats',
+        'prometheus',
+        'alertmanager',
+        'qan-agent',
+        'scripts',
+        'uinterface',
+        'wechat',
+        'urman-common',
+        'urman_testing')
+ORDER BY n.name || '/' || p.name;
 EOF;
    $ret = pg_query($conn,$sql);
    if(!$ret){
@@ -92,7 +115,7 @@ WHERE
         AND i.state LIKE $2
         AND (i.title LIKE $3
         OR i.description LIKE $4)
-ORDER BY i.iid;
+ORDER BY i.iid DESC;
 EOF;
    $sql_t =<<<EOF
 SELECT 
@@ -114,7 +137,7 @@ WHERE
         AND p.name LIKE $1
         AND i.state LIKE $2
         AND i.title LIKE $3
-ORDER BY i.iid;
+ORDER BY i.iid DESC;
 EOF;
 
    $keyword_wildcard=sprintf("%%%s%%",$_POST["keyword"]);
