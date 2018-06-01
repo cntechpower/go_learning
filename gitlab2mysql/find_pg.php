@@ -22,7 +22,7 @@
    }
 
    $sql =<<<EOF
-select n.name,n.name||'/'||p.name from projects p,namespaces n where p.namespace_id=n.id order by n.name||'/'||p.name;
+select p.name,n.name||'/'||p.name from projects p,namespaces n where p.namespace_id=n.id  and n.name in ('universe','autotest') order by n.name||'/'||p.name;
 EOF;
    $ret = pg_query($conn,$sql);
    if(!$ret){
@@ -42,8 +42,8 @@ EOF;
 	<option value="t">只标题</option>
 	</select>
 	Status:<select name="issue_stat">
-	<option value="%">any</option>
 	<option value="closed">closed</option>
+	<option value="%">any</option>
 	<option value="opened">opened</option>
 	</select>
         关键字:<input type="text" name="keyword"/>
