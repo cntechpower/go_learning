@@ -65,9 +65,9 @@ EOF;
 	<option value="t">只标题</option>
 	</select>
 	Status:<select name="issue_stat">
+	<option value="opened">opened</option>
 	<option value="closed">closed</option>
 	<option value="%">any</option>
-	<option value="opened">opened</option>
 	</select>
         关键字:<input type="text" name="keyword"/>
         <input type="submit" value="查询"/>
