@@ -1,11 +1,7 @@
 package cmd
 
 import (
-	"fmt"
 	"github.com/spf13/cobra"
-	//"strings"
-	//"os"
-	//"flag"
 )
 
 var SwitchCMD = &cobra.Command{
@@ -13,7 +9,8 @@ var SwitchCMD = &cobra.Command{
 	Short: "switch mysql M-S",
 	Long:  "switch mysql M-S",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("Exiting!\n")
+		db_pass, db_user, master_db_host, master_db_port, slave_db_host, slave_db_port = get_flags(cmd)
+		print_flags(db_pass, db_user, master_db_host, master_db_port, slave_db_host, slave_db_port)
 		return
 	},
 }
@@ -21,4 +18,3 @@ var SwitchCMD = &cobra.Command{
 func init() {
 	RootCmd.AddCommand(SwitchCMD)
 }
-

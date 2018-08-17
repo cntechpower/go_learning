@@ -3,9 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/cobra"
-	//"strings"
 	"os"
-	//"flag"
 )
 
 var db_user string
@@ -23,7 +21,7 @@ func init() {
 	RootCmd.PersistentFlags().StringVarP(&master_db_host, "master_db_host", "a", "127.0.0.1", "master database host")
 	RootCmd.PersistentFlags().StringVarP(&master_db_port, "master_db_port", "b", "3306", "master database port")
 	RootCmd.PersistentFlags().StringVarP(&slave_db_host, "slave_db_host", "c", "127.0.0.1", "slave database host")
-	RootCmd.PersistentFlags().StringVarP(&slave_db_port, "slave_db_port", "d", "3306", "slave database port")
+	RootCmd.PersistentFlags().StringVarP(&slave_db_port, "slave_db_port", "d", "3307", "slave database port")
 }
 func Execute() {
 	if err := RootCmd.Execute(); err != nil {
@@ -31,4 +29,3 @@ func Execute() {
 		os.Exit(1)
 	}
 }
-
