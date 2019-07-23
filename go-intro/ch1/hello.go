@@ -24,7 +24,12 @@ func main() {
 		}
 		for i := 0; i < len(s) && '0' <= s[i] && s[i] <= '9'; i++ {
 			fmt.Println(int(s[i] - '0'))
+			//fmt.Println(int(''))
 		}
+		fmt.Println(s[0])
+		fmt.Println(int(s[0]))
+		fmt.Println(int(s[0] - '0'))
+
 		ipSplit := strings.Split(os.Args[1], ".")
 		if len(ipSplit) != 4 {
 			fmt.Printf("IP Format Wrong\n")

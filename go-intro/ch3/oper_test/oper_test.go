@@ -1,6 +1,9 @@
 package oper_test
 
-import "testing"
+import (
+	"strconv"
+	"testing"
+)
 
 func TestCompare(t *testing.T) {
 	a := [...]int{1, 2, 3, 4}
@@ -10,4 +13,11 @@ func TestCompare(t *testing.T) {
 	t.Log(a == b)
 	//t.Log(a == c) //长度不同的数组无法比较
 	t.Log(a == d)
+}
+
+func TestConv(t *testing.T) {
+	s := strconv.Itoa(10)
+	t.Log("str" + s)
+	sInt, _ := strconv.Atoi("10")
+	t.Log(sInt)
 }
