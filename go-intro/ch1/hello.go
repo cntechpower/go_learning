@@ -26,9 +26,11 @@ func main() {
 			fmt.Println(int(s[i] - '0'))
 			//fmt.Println(int(''))
 		}
-		fmt.Println(s[0])
-		fmt.Println(int(s[0]))
-		fmt.Println(int(s[0] - '0'))
+		// 172.10.1.1
+		fmt.Println(s[0])            //49,ascii
+		fmt.Println(int(s[0]))       //49
+		fmt.Println(int(s[0] - '0')) //1
+		fmt.Printf("%b\n", s[0])
 
 		ipSplit := strings.Split(os.Args[1], ".")
 		if len(ipSplit) != 4 {
