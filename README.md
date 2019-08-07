@@ -1,4 +1,3 @@
 ## Go Study
-https://github.com/Unknwon/the-way-to-go_ZH_CN
-##
+Go学习过程中的代码记录
 
