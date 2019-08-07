@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80f057c-1aaf-4c76-a123-f391f9829423" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code_reading/20180416/LookupUidGid.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code_reading/20180417/random.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code_reading/ustats/channel.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code_reading/ustats/syscall.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/code_reading/ustats/user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dmp/MultidimensionalMap/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/MultidimensionalMap/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dmp/chan/chan.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/chan/chan.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dmp/chan/genAPI.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/chan/genAPI.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dmp/log_test/log_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/log_test/log_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsa/bubble/bubble.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/bubble/bubble.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsa/fibonacci/fibonacci.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/fibonacci/fibonacci.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsa/queue/queue.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/queue/queue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsa/recursive/recursive_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/recursive/recursive_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsa/stack/stack.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/stack/stack.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,17 +25,37 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.12.7/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GoLibraries">
+    <option name="urls">
+      <list>
+        <option value="file://$PROJECT_DIR$" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1P6KEsPsAIdRq11RtuJPUnZLPQ2" />
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -38,6 +73,42 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Go Test.TestFuncParameter in goFundamental/funcAsParameter">
+    <configuration name="TestFuncParameter in goFundamental/funcAsParameter" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_learning" />
+      <working_directory value="$PROJECT_DIR$/src/goFundamental/funcAsParameter" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goFundamental/funcAsParameter" />
+      <pattern value="^TestFuncParameter$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestMultiArgs in goFundamental/multiArgs" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_learning" />
+      <working_directory value="$PROJECT_DIR$/src/goFundamental/multiArgs" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goFundamental/multiArgs" />
+      <pattern value="^TestMultiArgs$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestStruct in goFundamental/struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_learning" />
+      <working_directory value="$PROJECT_DIR$/src/goFundamental/struct" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goFundamental/struct" />
+      <pattern value="^TestStruct$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestFuncParameter in goFundamental/funcAsParameter" />
+        <item itemvalue="Go Test.TestMultiArgs in goFundamental/multiArgs" />
+        <item itemvalue="Go Test.TestStruct in goFundamental/struct" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
