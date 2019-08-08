@@ -10,3 +10,7 @@ type student struct {
 func (s *student) sayHi() {
 	fmt.Printf("Hi I'm student\n")
 }
+
+func (s *student) printName() {
+	fmt.Printf("student only\n")
+}
