@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80f057c-1aaf-4c76-a123-f391f9829423" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code_reading/20180416/LookupUidGid.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code_reading/20180417/random.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code_reading/ustats/channel.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code_reading/ustats/syscall.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code_reading/ustats/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dmp/MultidimensionalMap/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/MultidimensionalMap/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dmp/chan/chan.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/chan/chan.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dmp/chan/genAPI.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/chan/genAPI.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dmp/log_test/log_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/log_test/log_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsa/bubble/bubble.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/bubble/bubble.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsa/fibonacci/fibonacci.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/fibonacci/fibonacci.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsa/queue/queue.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/queue/queue.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsa/recursive/recursive_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/recursive/recursive_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsa/stack/stack.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/stack/stack.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
