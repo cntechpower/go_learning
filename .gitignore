@@ -1,3 +1,6 @@
 chapter_4/20171031/debug
 */*/debug
 .idea/workspace.xml
+pkg/*
+.idea/*
+.vscode/*
