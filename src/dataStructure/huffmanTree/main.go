@@ -52,58 +52,117 @@ func (pq *PriorityQueue) update(item *Item, value string, priority int) {
 //MinHeapEnd
 
 //huffManTree Start
-type huffManTree struct {
-	left   *huffManTree
-	right  *huffManTree
-	parent *huffManTree
-	value  int
-	weight int
+type huffManNode struct {
+	left     *huffManNode
+	right    *huffManNode
+	parent   *huffManNode
+	value    string
+	priority int
+	index    int
 }
 
-func NewHuffManTree(value, weight int) *huffManTree {
-	return &huffManTree{
-		left:   nil,
-		right:  nil,
-		parent: nil,
-		value:  value,
-		weight: weight,
+func (h *huffManNode) getWpl() int {
+	wpl := 0
+	h.travel(func(n *huffManNode) error {
+		if n.value != "" {
+			old := n
+			depth := 0
+			for n.parent != nil {
+				depth++
+				n = n.parent
+			}
+			wpl = wpl + old.priority*depth
+		}
+		return nil
+	})
+	return wpl
+}
+
+func (h *huffManNode) travel(fn func(n *huffManNode) error) error {
+	if h.left != nil {
+		if err := h.left.travel(fn); err != nil {
+			return err
+		}
 	}
-}
-
-func (t *huffManTree) insertTree(value, weight int) *huffManTree {
+	if err := fn(h); err != nil {
+		return err
+	}
+	if h.right != nil {
+		if err := h.right.travel(fn); err != nil {
+			return err
+		}
+	}
 	return nil
+
 }
 
-func (t *huffManTree) getWpl() int {
-	return 0
+type PriorityHuffManNodeList []*huffManNode
+
+func (pq PriorityHuffManNodeList) Len() int { return len(pq) }
+
+func (pq PriorityHuffManNodeList) Swap(i, j int) {
+	pq[i], pq[j] = pq[j], pq[i]
+	pq[i].index = j
+	pq[j].index = i
+}
+
+func (pq PriorityHuffManNodeList) Less(i, j int) bool {
+	return pq[i].priority < pq[j].priority
+}
+
+func (pq *PriorityHuffManNodeList) Push(x interface{}) {
+	n := len(*pq)
+	items := x.(*huffManNode)
+	items.index = n
+	*pq = append(*pq, items)
+}
+
+func (pq *PriorityHuffManNodeList) Pop() (x interface{}) {
+	old := *pq
+	n := len(old)
+	item := old[n-1]
+	item.index = -1
+	*pq = old[0 : n-1]
+	return item
 }
 
 func main() {
-	items := map[string]int{
-		"banana": 3,
-		"appale": 2,
-		"pear":   4,
+	charList := map[string]int{
+		"a": 1,
+		"b": 2,
+		"c": 3,
+		"d": 4,
+		"e": 50,
+		"f": 30,
+		"g": 80,
 	}
-	i := 0
-	pq := make(PriorityQueue, len(items))
-	for value, priority := range items {
-		pq[i] = &Item{
-			value:    value,
-			priority: priority,
-			index:    i,
+	pq := make(PriorityHuffManNodeList, len(charList))
+	pqIdx := 0
+	for k, v := range charList {
+		pq[pqIdx] = &huffManNode{
+			value:    k,
+			priority: v,
+			index:    pqIdx,
 		}
-		i++
+		pqIdx++
 	}
 	heap.Init(&pq)
-	item2 := &Item{
-		value:    "Orange",
-		priority: 1,
+	var c1, c2 *huffManNode
+	for len(pq) > 1 {
+		c1 = heap.Pop(&pq).(*huffManNode)
+		c2 = heap.Pop(&pq).(*huffManNode)
+		parent := &huffManNode{
+			priority: c1.priority + c2.priority,
+			left:     c1,
+			right:    c2,
+		}
+		c1.parent = parent
+		c2.parent = parent
+		heap.Push(&pq, parent)
 	}
-	heap.Push(&pq, item2)
-	pq.update(item2, item2.value, 5)
-	for pq.Len() > 0 {
-		item := heap.Pop(&pq).(*Item)
-		fmt.Printf("%.2d:%s \n", item.priority, item.value)
-	}
+	root := heap.Pop(&pq).(*huffManNode)
+	fmt.Printf("root is %v\n", root)
+	wpl := root.getWpl()
+	fmt.Printf("WPL is %v\n", wpl)
 
 }
