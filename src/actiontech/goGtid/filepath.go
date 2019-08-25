@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 )
 
-func main() {
+func main1() {
 	d := filepath.Dir("/tmp/test")
 	fmt.Println(d)
 }
