@@ -1,0 +1,192 @@
+# at 2781896
+# at 2781961
+# at 2782037
+# at 2782172
+# at 2782231
+# at 2782311
+# at 2782342
+# at 2782407
+# at 2782483
+# at 2782618
+# at 2782677
+# at 2782757
+# at 2782788
+# at 2782853
+# at 2782929
+# at 2783064
+# at 2783123
+# at 2783203
+# at 2783234
+#190827 16:26:18 server id 1174285442  end_log_pos 2783299 CRC32 0x930009f9 	GTID	last_committed=6240	sequence_number=6241	rbr_only=yes	original_committed_timestamp=0	immediate_commit_timestamp=0	transaction_length=0
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+# immediate_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+/*!80001 SET @@session.original_commit_timestamp=0*//*!*/;
+/*!80014 SET @@session.original_server_version=0*//*!*/;
+/*!80014 SET @@session.immediate_server_version=0*//*!*/;
+SET @@SESSION.GTID_NEXT= 'c95e95e8-c872-11e9-ac89-0242ac148602:39815'/*!*/;
+# at 2783299
+#190827 16:26:18 server id 1174285442  end_log_pos 2783375 CRC32 0xd0741a7e 	Query	thread_id=113	exec_time=0	error_code=0
+SET TIMESTAMP=1566894378/*!*/;
+SET @@session.pseudo_thread_id=113/*!*/;
+SET @@session.foreign_key_checks=1, @@session.sql_auto_is_null=0, @@session.unique_checks=1, @@session.autocommit=1/*!*/;
+SET @@session.sql_mode=1436549152/*!80005 &~0x1003ff00*//*!*/;
+SET @@session.auto_increment_increment=1, @@session.auto_increment_offset=1/*!*/;
+/*!\C utf8 *//*!*/;
+SET @@session.character_set_client=33,@@session.collation_connection=33,@@session.collation_server=33/*!*/;
+SET @@session.time_zone='SYSTEM'/*!*/;
+SET @@session.lc_time_names=0/*!*/;
+SET @@session.collation_database=DEFAULT/*!*/;
+BEGIN
+/*!*/;
+# at 2783375
+# at 2783510
+#190827 16:26:18 server id 1174285442  end_log_pos 2783569 CRC32 0x3b1b197e 	Table_map: `universe`.`u_delay` mapped to number 112
+# at 2783569
+#190827 16:26:18 server id 1174285442  end_log_pos 2783649 CRC32 0x39144c89 	Update_rows: table id 112 flags: STMT_END_F
+
+BINLOG '
+KulkXROCLP5FOwAAAFF5KgAAAHAAAAAAAAEACHVuaXZlcnNlAAd1X2RlbGF5AAMPEggDOgIABn4Z
+Gzs=
+KulkXR+CLP5FUAAAAKF5KgAAAHAAAAAAAAEAAgAD///4BgB1c3RhdHOZo/cGkSCbAAAAAAAA+AYA
+dXN0YXRzmaP3BpIhmwAAAAAAAIlMFDk=
+'/*!*/;
+### UPDATE `universe`.`u_delay`
+### WHERE
+###   @1='ustats'
+###   @2='2019-08-27 16:26:17'
+###   @3=39712
+### SET
+###   @1='ustats'
+###   @2='2019-08-27 16:26:18'
+###   @3=39713
+# at 2783649
+#190827 16:26:18 server id 1174285442  end_log_pos 2783680 CRC32 0x8e9d69a3 	Xid = 1559957
+COMMIT/*!*/;
+# at 2783680
+#190827 16:26:18 server id 1174285442  end_log_pos 2783745 CRC32 0x94af3caf 	GTID	last_committed=6241	sequence_number=6242	rbr_only=yes	original_committed_timestamp=0	immediate_commit_timestamp=0	transaction_length=0
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+# immediate_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+/*!80001 SET @@session.original_commit_timestamp=0*//*!*/;
+/*!80014 SET @@session.original_server_version=0*//*!*/;
+/*!80014 SET @@session.immediate_server_version=0*//*!*/;
+SET @@SESSION.GTID_NEXT= 'c95e95e8-c872-11e9-ac89-0242ac148602:39816'/*!*/;
+# at 2783745
+#190827 16:26:18 server id 1174285442  end_log_pos 2783821 CRC32 0x0bceacc0 	Query	thread_id=119	exec_time=0	error_code=0
+SET TIMESTAMP=1566894378/*!*/;
+BEGIN
+/*!*/;
+# at 2783821
+# at 2783956
+#190827 16:26:18 server id 1174285442  end_log_pos 2784015 CRC32 0x1646d0fa 	Table_map: `universe`.`u_delay` mapped to number 112
+# at 2784015
+#190827 16:26:18 server id 1174285442  end_log_pos 2784095 CRC32 0x946eb937 	Update_rows: table id 112 flags: STMT_END_F
+
+BINLOG '
+KulkXROCLP5FOwAAAA97KgAAAHAAAAAAAAEACHVuaXZlcnNlAAd1X2RlbGF5AAMPEggDOgIABvrQ
+RhY=
+KulkXR+CLP5FUAAAAF97KgAAAHAAAAAAAAEAAgAD///4BgB1c3RhdHOZo/cGkiGbAAAAAAAA+AYA
+dXN0YXRzmaP3BpIimwAAAAAAADe5bpQ=
+'/*!*/;
+### UPDATE `universe`.`u_delay`
+### WHERE
+###   @1='ustats'
+###   @2='2019-08-27 16:26:18'
+###   @3=39713
+### SET
+###   @1='ustats'
+###   @2='2019-08-27 16:26:18'
+###   @3=39714
+# at 2784095
+#190827 16:26:18 server id 1174285442  end_log_pos 2784126 CRC32 0x5a503771 	Xid = 1559961
+COMMIT/*!*/;
+# at 2784126
+#190827 16:26:19 server id 1174285442  end_log_pos 2784191 CRC32 0x14a911aa 	GTID	last_committed=6242	sequence_number=6243	rbr_only=yes	original_committed_timestamp=0	immediate_commit_timestamp=0	transaction_length=0
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+# immediate_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+/*!80001 SET @@session.original_commit_timestamp=0*//*!*/;
+/*!80014 SET @@session.original_server_version=0*//*!*/;
+/*!80014 SET @@session.immediate_server_version=0*//*!*/;
+SET @@SESSION.GTID_NEXT= 'c95e95e8-c872-11e9-ac89-0242ac148602:39817'/*!*/;
+# at 2784191
+#190827 16:26:19 server id 1174285442  end_log_pos 2784267 CRC32 0xbbe1b448 	Query	thread_id=114	exec_time=0	error_code=0
+SET TIMESTAMP=1566894379/*!*/;
+BEGIN
+/*!*/;
+# at 2784267
+# at 2784402
+#190827 16:26:19 server id 1174285442  end_log_pos 2784461 CRC32 0x8dd87b1b 	Table_map: `universe`.`u_delay` mapped to number 112
+# at 2784461
+#190827 16:26:19 server id 1174285442  end_log_pos 2784541 CRC32 0x0b0659ca 	Update_rows: table id 112 flags: STMT_END_F
+
+BINLOG '
+K+lkXROCLP5FOwAAAM18KgAAAHAAAAAAAAEACHVuaXZlcnNlAAd1X2RlbGF5AAMPEggDOgIABht7
+2I0=
+K+lkXR+CLP5FUAAAAB19KgAAAHAAAAAAAAEAAgAD///4BgB1c3RhdHOZo/cGkiKbAAAAAAAA+AYA
+dXN0YXRzmaP3BpMjmwAAAAAAAMpZBgs=
+'/*!*/;
+### UPDATE `universe`.`u_delay`
+### WHERE
+###   @1='ustats'
+###   @2='2019-08-27 16:26:18'
+###   @3=39714
+### SET
+###   @1='ustats'
+###   @2='2019-08-27 16:26:19'
+###   @3=39715
+# at 2784541
+#190827 16:26:19 server id 1174285442  end_log_pos 2784572 CRC32 0x7d899352 	Xid = 1559976
+COMMIT/*!*/;
+# at 2784572
+#190827 16:26:19 server id 1174285442  end_log_pos 2784637 CRC32 0xe76bde0d 	GTID	last_committed=6243	sequence_number=6244	rbr_only=yes	original_committed_timestamp=0	immediate_commit_timestamp=0	transaction_length=0
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+# immediate_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+/*!80001 SET @@session.original_commit_timestamp=0*//*!*/;
+/*!80014 SET @@session.original_server_version=0*//*!*/;
+/*!80014 SET @@session.immediate_server_version=0*//*!*/;
+SET @@SESSION.GTID_NEXT= 'c95e95e8-c872-11e9-ac89-0242ac148602:39818'/*!*/;
+# at 2784637
+#190827 16:26:19 server id 1174285442  end_log_pos 2784713 CRC32 0x42a372c1 	Query	thread_id=118	exec_time=0	error_code=0
+SET TIMESTAMP=1566894379/*!*/;
+BEGIN
+/*!*/;
+# at 2784713
+# at 2784848
+#190827 16:26:19 server id 1174285442  end_log_pos 2784907 CRC32 0xba28ef46 	Table_map: `universe`.`u_delay` mapped to number 112
+# at 2784907
+#190827 16:26:19 server id 1174285442  end_log_pos 2784987 CRC32 0x7c480d76 	Update_rows: table id 112 flags: STMT_END_F
+
+BINLOG '
+K+lkXROCLP5FOwAAAIt+KgAAAHAAAAAAAAEACHVuaXZlcnNlAAd1X2RlbGF5AAMPEggDOgIABkbv
+KLo=
+K+lkXR+CLP5FUAAAANt+KgAAAHAAAAAAAAEAAgAD///4BgB1c3RhdHOZo/cGkyObAAAAAAAA+AYA
+dXN0YXRzmaP3BpMkmwAAAAAAAHYNSHw=
+'/*!*/;
+### UPDATE `universe`.`u_delay`
+### WHERE
+###   @1='ustats'
+###   @2='2019-08-27 16:26:19'
+###   @3=39715
+### SET
+###   @1='ustats'
+###   @2='2019-08-27 16:26:19'
+###   @3=39716
+# at 2784987
+#190827 16:26:19 server id 1174285442  end_log_pos 2785018 CRC32 0x7e01a2c3 	Xid = 1559980
+COMMIT/*!*/;
+# at 2785018
+# at 2785083
+# at 2785159
+# at 2785294
+# at 2785353
+# at 2785433
+# at 2785464
+#190827 16:26:20 server id 1174285442  end_log_pos 2785511 CRC32 0xde602a2d 	Rotate to mysql-bin.000004  pos: 4
+SET @@SESSION.GTID_NEXT= 'AUTOMATIC' /* added by mysqlbinlog */ /*!*/;
+DELIMITER ;
+# End of log file
+/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;
+/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/;

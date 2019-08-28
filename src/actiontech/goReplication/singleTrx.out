@@ -1,0 +1,46 @@
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+# original_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+# immediate_commit_timestamp=0 (1970-01-01 08:00:00.000000 CST)
+/*!80001 SET @@session.original_commit_timestamp=0*//*!*/;
+/*!80014 SET @@session.original_server_version=0*//*!*/;
+/*!80014 SET @@session.immediate_server_version=0*//*!*/;
+SET @@SESSION.GTID_NEXT= 'c95e95e8-c872-11e9-ac89-0242ac148602:39815'/*!*/;
+# at 2783299
+#190827 16:26:18 server id 1174285442  end_log_pos 2783375 CRC32 0xd0741a7e     Query   thread_id=113   exec_time=0     error_code=0
+SET TIMESTAMP=1566894378/*!*/;
+SET @@session.pseudo_thread_id=113/*!*/;
+SET @@session.foreign_key_checks=1, @@session.sql_auto_is_null=0, @@session.unique_checks=1, @@session.autocommit=1/*!*/;
+SET @@session.sql_mode=1436549152/*!80005 &~0x1003ff00*//*!*/;
+SET @@session.auto_increment_increment=1, @@session.auto_increment_offset=1/*!*/;
+/*!\C utf8 *//*!*/;
+SET @@session.character_set_client=33,@@session.collation_connection=33,@@session.collation_server=33/*!*/;
+SET @@session.time_zone='SYSTEM'/*!*/;
+SET @@session.lc_time_names=0/*!*/;
+SET @@session.collation_database=DEFAULT/*!*/;
+BEGIN
+/*!*/;
+# at 2783375
+# at 2783510
+#190827 16:26:18 server id 1174285442  end_log_pos 2783569 CRC32 0x3b1b197e     Table_map: `universe`.`u_delay` mapped to number 112
+# at 2783569
+#190827 16:26:18 server id 1174285442  end_log_pos 2783649 CRC32 0x39144c89     Update_rows: table id 112 flags: STMT_END_F
+
+BINLOG '
+KulkXROCLP5FOwAAAFF5KgAAAHAAAAAAAAEACHVuaXZlcnNlAAd1X2RlbGF5AAMPEggDOgIABn4Z
+Gzs=
+KulkXR+CLP5FUAAAAKF5KgAAAHAAAAAAAAEAAgAD///4BgB1c3RhdHOZo/cGkSCbAAAAAAAA+AYA
+dXN0YXRzmaP3BpIhmwAAAAAAAIlMFDk=
+'/*!*/;
+### UPDATE `universe`.`u_delay`
+### WHERE
+###   @1='ustats'
+###   @2='2019-08-27 16:26:17'
+###   @3=39712
+### SET
+###   @1='ustats'
+###   @2='2019-08-27 16:26:18'
+###   @3=39713
+# at 2783649
+#190827 16:26:18 server id 1174285442  end_log_pos 2783680 CRC32 0x8e9d69a3     Xid = 1559957
+COMMIT/*!*/;
+# at 2783680
