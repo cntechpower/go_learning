@@ -1,0 +1,40 @@
+#190829 10:37:32 server id 1023592320  end_log_pos 60023 CRC32 0xe968f349 	GTID	last_committed=129	sequence_number=135	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= 'c31e9f17-c7b2-11e9-b96c-0242ac148602:486127'/*!*/;
+# at 60023
+#190829 10:37:11 server id 1023592320  end_log_pos 60095 CRC32 0x4bd01073 	Query	thread_id=10216	exec_time=0	error_code=0
+SET TIMESTAMP=1567046231/*!*/;
+BEGIN
+/*!*/;
+# at 60095
+# at 60152
+#190829 10:37:11 server id 1023592320  end_log_pos 60200 CRC32 0x1f2ac7c9 	Table_map: `test`.`t1` mapped to number 441
+# at 60200
+#190829 10:37:11 server id 1023592320  end_log_pos 60246 CRC32 0x9df2b3b6 	Write_rows: table id 441 flags: STMT_END_F
+
+BINLOG '
+VzpnXROAxwI9MAAAACjrAAAAALkBAAAAAAEABHRlc3QAAnQxAAIDDwIoAALJxyof
+VzpnXR6AxwI9LgAAAFbrAAAAALkBAAAAAAEAAgAC//xYAAAABWZpcnN0trPynQ==
+'/*!*/;
+### INSERT INTO `test`.`t1`
+### SET
+###   @1=88
+###   @2='first'
+# at 60246
+# at 60304
+#190829 10:37:30 server id 1023592320  end_log_pos 60352 CRC32 0xfc495bb9 	Table_map: `test`.`t1` mapped to number 441
+# at 60352
+#190829 10:37:30 server id 1023592320  end_log_pos 60399 CRC32 0xff0c2833 	Write_rows: table id 441 flags: STMT_END_F
+
+BINLOG '
+ajpnXROAxwI9MAAAAMDrAAAAALkBAAAAAAEABHRlc3QAAnQxAAIDDwIoAAK5W0n8
+ajpnXR6AxwI9LwAAAO/rAAAAALkBAAAAAAEAAgAC//xNAAAABnNlY29uZDMoDP8=
+'/*!*/;
+### INSERT INTO `test`.`t1`
+### SET
+###   @1=77
+###   @2='second'
+# at 60399
+#190829 10:37:32 server id 1023592320  end_log_pos 60430 CRC32 0x7efc75ae 	Xid = 22547595
+COMMIT/*!*/;
+# at 60430

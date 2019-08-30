@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bufio"
+	"bytes"
 	"fmt"
 	"os/exec"
 	"regexp"
@@ -109,9 +111,86 @@ func matchMysqlBinlogOutput() error {
 
 }
 
+func readLineBinlog() error {
+	cmd := exec.Command("cat", "./trxMultiSQL.out")
+	output, err := cmd.Output()
+	if err != nil {
+		return err
+	}
+	type GtidContent struct {
+		gtid string
+		sql  []string
+	}
+	gtids := make([]*GtidContent, 0)
+	currentGtid := new(GtidContent)
+	currentSql := ""
+	binlogScanner := bufio.NewScanner(bytes.NewReader(output))
+	for binlogScanner.Scan() {
+		line := binlogScanner.Text()
+		typeOfLine, value := binlogLineProcessor(line)
+		switch typeOfLine {
+		case "GTID":
+			if currentGtid.gtid != "" {
+				gtids = append(gtids, currentGtid)
+				currentGtid = new(GtidContent)
+			}
+			currentGtid.gtid = value
+		case "SQL":
+			currentSql += value
+		case "COMMIT":
+			//currentGtid.sql = append(currentGtid.sql, strings.Replace(currentSql, "  ", "", -1))
+			//currentSql = ""
+			if currentGtid.gtid != "" && currentSql != "" {
+				currentGtid.sql = append(currentGtid.sql, currentSql)
+				currentSql = ""
+			}
+		case "POS":
+			if currentGtid.gtid != "" && currentSql != "" {
+				currentGtid.sql = append(currentGtid.sql, currentSql)
+				currentSql = ""
+			}
+		}
+
+	}
+
+	//append last currentGtid to gtids
+	if currentGtid.gtid != "" {
+		gtids = append(gtids, currentGtid)
+	}
+	for _, v := range gtids {
+		fmt.Printf("GTID is %v\n", v.gtid)
+		for _, s := range v.sql {
+			fmt.Printf("SQL is %v\n", s)
+		}
+	}
+	return nil
+
+}
+
+func binlogLineProcessor(line string) (typeOfLine, value string) {
+	//match GTID event:
+	//line eg: SET @@SESSION.GTID_NEXT= 'c95e95e8-c872-11e9-ac89-0242ac148602:39815'/*!*/;
+	gtidFormat := regexp.MustCompile("[[:graph:]]{36}:[[:digit:]]+")
+	if strings.HasPrefix(line, "SET @@SESSION.GTID_NEXT= ") {
+		value = gtidFormat.FindString(line)
+		return "GTID", value
+	}
+	if strings.HasPrefix(line, "###") {
+		value = strings.TrimPrefix(line, "###")
+		return "SQL", value
+	}
+	if strings.HasPrefix(line, "COMMIT") {
+		return "COMMIT", ""
+	}
+	if strings.HasPrefix(line, "# at") {
+		return "POS", ""
+	}
+	return "", ""
+}
+
 func main() {
 	//parseBinlog()
-	if err := matchMysqlBinlogOutput(); err != nil {
+	if err := readLineBinlog(); err != nil {
 		log.Fatal(err.Error())
 	}
 
