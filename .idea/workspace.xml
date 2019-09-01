@@ -3,9 +3,46 @@
   <component name="ChangeListManager">
     <list default="true" id="e80f057c-1aaf-4c76-a123-f391f9829423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actiontech/goGtid/gitd.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/goGtid/gitd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actiontech/goReplication/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/goReplication/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actiontech/goReplication/singleTrx.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/goReplication/trxSingleSQL.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/cancel_test/cancel_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/cancel_test/cancel_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch1/hello.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch1/hello.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch1/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch1/test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch2/fib/fibonacci_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch2/fib/fibonacci_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch2/test/first_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch2/test/first_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch2/type_test/type_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch2/type_test/type_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch3/array/array_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch3/array/array_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch3/loop/loop_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch3/loop/loop_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch3/oper_test/oper_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch3/oper_test/oper_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch4/time_test/time_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch4/time_test/time_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/ch4/type_test/type_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/ch4/type_test/type_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/channel_close_test/channel_close_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/channel_close_test/channel_close_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/context_test/context_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/context_test/context_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/error_handle/error_handle_test/error_handle_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/error_handle/error_handle_test/error_handle_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/error_handle/panic_recover/panic_recover_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/error_handle/panic_recover/panic_recover_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/func/empty_interface_test/empty_interface_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/func/empty_interface_test/empty_interface_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/func/extension_test/extension_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/func/extension_test/extension_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/func/func_test/func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/func/func_test/func_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/func/interface_test/interface_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/func/interface_test/interface_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/func/oop_test/oop_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/func/oop_test/oop_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/func/polymorphism/polymorphism_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/func/polymorphism/polymorphism_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/goconvey/goconvey_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/goconvey/goconvey_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/goroutine/csp_test/csp_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/goroutine/csp_test/csp_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/goroutine/goroutine_test/goroutine_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/goroutine/goroutine_test/goroutine_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/goroutine/select_timeout_test/select_timeout_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/goroutine/select_timeout_test/select_timeout_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/goroutine/share_mem_test/share_mem_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/goroutine/share_mem_test/share_mem_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/obj_pool/obj_pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/obj_pool/obj_pool.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/obj_pool/obj_pool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/obj_pool/obj_pool_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/obj_pool/sync_pool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/obj_pool/sync_pool_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/once_test/once_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/once_test/once_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/package/client/package_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/package/client/package_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/package/utils/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/package/utils/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/reflect_test/reflect_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/reflect_test/reflect_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/type/map_ext_test/map_ext_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/type/map_ext_test/map_ext_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/type/map_test/map_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/type/map_test/map_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/type/slice_test/array_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/type/slice_test/array_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/type/string_test/string_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/type/string_test/string_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/unittest/functions.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/unittest/functions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/unittest/functions_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/unittest/functions_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go-intro/wait_complate_test/wait_complate_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/wait_complate_test/wait_complate_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
