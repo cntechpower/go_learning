@@ -124,10 +124,13 @@ func readLineBinlog() error {
 	gtids := make([]*GtidContent, 0)
 	currentGtid := new(GtidContent)
 	currentSql := ""
-	binlogScanner := bufio.NewScanner(bytes.NewReader(output))
-	for binlogScanner.Scan() {
-		line := binlogScanner.Text()
-		typeOfLine, value := binlogLineProcessor(line)
+	binlogReader := bufio.NewReader(bytes.NewReader(output))
+	for {
+		line, _, err := binlogReader.ReadLine()
+		if err != nil {
+			break
+		}
+		typeOfLine, value := binlogLineProcessor(string(line))
 		switch typeOfLine {
 		case "GTID":
 			if currentGtid.gtid != "" {

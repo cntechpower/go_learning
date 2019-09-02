@@ -20,5 +20,8 @@ func TestDefer(t *testing.T) {
 		fmt.Println("Clearing...")
 	}()
 	fmt.Println("Starting...")
-	panic("err")
+	innerWithTime := timeSpent(func(op int) int {
+		return op * op
+	})
+	t.Logf("Calling timeSpent: %v", innerWithTime(100))
 }

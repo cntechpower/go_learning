@@ -3,9 +3,12 @@ package wait_complate_test
 import (
 	"fmt"
 	"runtime"
+	"sync"
 	"testing"
 	"time"
 )
+
+var muId sync.Mutex
 
 func runTask(t int) string {
 	time.Sleep(time.Millisecond)

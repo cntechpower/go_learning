@@ -6,11 +6,11 @@ import (
 	"time"
 )
 
-func cancel_1(cancelChan chan int) {
+func closeChan(cancelChan chan int) {
 	close(cancelChan)
 }
 
-func cancel_2(cancelChan chan int) {
+func sendExitChan(cancelChan chan int) {
 	cancelChan <- 1
 }
 
@@ -20,6 +20,7 @@ func isCancelled(cancelChan chan int) bool {
 		fmt.Printf("isCancelled is True. Values is %d,status is %v\n", v, ok)
 		return true
 	default:
+		fmt.Printf("isCancelled is False\n")
 		return false
 	}
 }
@@ -37,7 +38,8 @@ func TestCancel(t *testing.T) {
 			t.Logf("%d goroutine is stopped", i)
 		}(i, cancelChan)
 	}
-	cancel_1(cancelChan)
-	//cancel_2(cancelChan)
+	time.Sleep(2 * time.Second)
+	closeChan(cancelChan)
+	//sendExitChan(cancelChan)
 	time.Sleep(1 * time.Second)
 }
