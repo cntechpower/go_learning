@@ -13,7 +13,7 @@ var openApiErrorNotFound = openapiError.New(404, "Not Found")
 var genericErrorTimeout = genericError.New("Operation Timeout")
 var genericErrorNotFound = genericError.New("Not Found")
 
-func openApidFindTimeOut() error {
+func openApiFindTimeOut() error {
 	return openApiErrorTimeOut
 }
 
@@ -30,7 +30,7 @@ func genericFindNotFound() error {
 }
 
 func TestErrorTypeDetect(t *testing.T) {
-	if err := openApidFindTimeOut(); err != nil {
+	if err := openApiFindTimeOut(); err != nil {
 		if err == openApiErrorTimeOut {
 			fmt.Printf("openApi Timeout : %v\n", err)
 		}

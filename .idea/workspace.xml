@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80f057c-1aaf-4c76-a123-f391f9829423" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/goIntroGeekTime/type/type_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actiontech/goReplication/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/goReplication/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/cancel_test/cancel_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/cancelChan/cancel_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch1/hello.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch1/test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch2/fib/fibonacci_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/fib/fibonacci_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch2/test/first_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch2/type_test/type_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch3/array/array_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/array/array_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch3/loop/loop_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/loop/loop_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch3/oper_test/oper_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/oper_test/oper_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch4/time_test/time_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/time_test/time_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/ch4/type_test/type_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/channel_close_test/channel_close_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/chanWg/channel_close_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/obj_pool/obj_pool.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/objPool/obj_pool.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/obj_pool/obj_pool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/objPool/obj_pool_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/obj_pool/sync_pool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/objPool/sync_pool_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/unittest/functions.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/unittest/functions_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/wait_complate_test/wait_complate_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/wait_complate_test/wait_complate_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/chanWg/channel_close_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/chanWaitGroup/channel_close_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/context_test/context_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/context/context_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/errorTypeDetect/errorTypeDetect_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/errorTypeDetect/errorTypeDetect_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/error_handle/error_handle_test/error_handle_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/error_handle/panic_recover/panic_recover_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/array/panic_recover/panic_recover_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/reflect_test/reflect_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/reflect/reflect_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/wait_complate_test/wait_complate_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/syncMutex/syncMutex_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +44,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/goIntroGeekTime/array" />
       <recent name="$PROJECT_DIR$/src/goIntroGeekTime/type" />
       <recent name="$PROJECT_DIR$/src/goIntroGeekTime" />
       <recent name="$PROJECT_DIR$/src/TheWayToGo" />
@@ -74,64 +62,64 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestErrorTypeDetect in errorTypeDetect_test.go">
-    <configuration name="TestCancel in cancel_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestFilter in filter_test.go">
+    <configuration name="TestAsyncServices in async_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/cancelChan" />
+      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/asyncServices" />
       <framework value="gotest" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/cancelChan/cancel_test.go" />
+      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/asyncServices/async_test.go" />
+      <pattern value="^TestAsyncServices$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestCancel in context_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_learning" />
+      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/context_test" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/context_test/context_test.go" />
       <pattern value="^TestCancel$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestDefer in time_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCounterWithMutex in syncMutex_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/time_test" />
+      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/syncMutex" />
       <framework value="gotest" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/time_test/time_test.go" />
-      <pattern value="^TestDefer$" />
+      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/syncMutex/syncMutex_test.go" />
+      <pattern value="^TestCounterWithMutex$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestErrorTypeDetect in errorTypeDetect_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestDeepEqual in reflect_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/errorTypeDetect" />
+      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/reflect" />
       <framework value="gotest" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/errorTypeDetect/errorTypeDetect_test.go" />
-      <pattern value="^TestErrorTypeDetect$" />
+      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/reflect/reflect_test.go" />
+      <pattern value="^TestDeepEqual$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestFirstResponse in wait_complate_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestFilter in filter_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/wait_complate_test" />
+      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/piplineFilter" />
       <framework value="gotest" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/wait_complate_test/wait_complate_test.go" />
-      <pattern value="^TestFirstResponse$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestInterface in interface_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/interfaceTest" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/interfaceTest/interface_test.go" />
-      <pattern value="^TestInterface$" />
+      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/piplineFilter/filter_test.go" />
+      <pattern value="^TestFilter$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestErrorTypeDetect in errorTypeDetect_test.go" />
-        <item itemvalue="Go Test.TestDefer in time_test.go" />
-        <item itemvalue="Go Test.TestFirstResponse in wait_complate_test.go" />
-        <item itemvalue="Go Test.TestCancel in cancel_test.go" />
-        <item itemvalue="Go Test.TestInterface in interface_test.go" />
+        <item itemvalue="Go Test.TestFilter in filter_test.go" />
+        <item itemvalue="Go Test.TestDeepEqual in reflect_test.go" />
+        <item itemvalue="Go Test.TestAsyncServices in async_test.go" />
+        <item itemvalue="Go Test.TestCancel in context_test.go" />
+        <item itemvalue="Go Test.TestCounterWithMutex in syncMutex_test.go" />
       </list>
     </recent_temporary>
   </component>
