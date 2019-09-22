@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e80f057c-1aaf-4c76-a123-f391f9829423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/chanWg/channel_close_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/chanWaitGroup/channel_close_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/context_test/context_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/context/context_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/errorTypeDetect/errorTypeDetect_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/errorTypeDetect/errorTypeDetect_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/error_handle/error_handle_test/error_handle_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/error_handle/panic_recover/panic_recover_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/array/panic_recover/panic_recover_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/reflect_test/reflect_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/reflect/reflect_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/goIntroGeekTime/wait_complate_test/wait_complate_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/goIntroGeekTime/syncMutex/syncMutex_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actiontech/orm/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/actiontech/orm/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +22,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GoLibraries">
+    <option name="urls">
+      <list>
+        <option value="file://$PROJECT_DIR$" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1P6KEsPsAIdRq11RtuJPUnZLPQ2" />
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
@@ -40,7 +41,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="go" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -62,7 +63,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestFilter in filter_test.go">
+  <component name="RunManager" selected="Go Test.TestAgent in agent_test.go">
+    <configuration name="TestAgent in agent_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_learning" />
+      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/microKernel" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/microKernel/agent_test.go" />
+      <pattern value="^TestAgent$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestAsyncServices in async_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_learning" />
       <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/asyncServices" />
@@ -81,16 +92,6 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/context_test/context_test.go" />
       <pattern value="^TestCancel$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestCounterWithMutex in syncMutex_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_learning" />
-      <working_directory value="$PROJECT_DIR$/src/goIntroGeekTime/syncMutex" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/src/goIntroGeekTime/syncMutex/syncMutex_test.go" />
-      <pattern value="^TestCounterWithMutex$" />
       <method v="2" />
     </configuration>
     <configuration name="TestDeepEqual in reflect_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -115,11 +116,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestAgent in agent_test.go" />
         <item itemvalue="Go Test.TestFilter in filter_test.go" />
         <item itemvalue="Go Test.TestDeepEqual in reflect_test.go" />
         <item itemvalue="Go Test.TestAsyncServices in async_test.go" />
         <item itemvalue="Go Test.TestCancel in context_test.go" />
-        <item itemvalue="Go Test.TestCounterWithMutex in syncMutex_test.go" />
       </list>
     </recent_temporary>
   </component>

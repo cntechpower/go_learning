@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 
 	"github.com/jinzhu/gorm"
@@ -66,7 +65,8 @@ type ComponentGroupMeta struct {
 	// @field
 	// @description=ushard used-work-ids
 	// @example=0,1,2,3
-	UshardUsedWorkIds string `json:"ushard_used_work_ids"`
+	UshardUsedWorkIds string        `json:"ushard_used_work_ids"`
+	ComponentInfo     ComponentMeta `gorm:"EMBEDDED"`
 }
 
 type ComponentMeta struct {
@@ -180,19 +180,30 @@ func main() {
 	// 	First(&group)
 	// json, _ := json.Marshal(group)
 	// fmt.Println(string(json))
-	fuzzyKeyword := "dd"
-	fuzzyMatchCondition := fmt.Sprintf("component_meta.server_id like '%%%[1]v%%' "+
-		"or component_meta.group_id like '%%%[1]v%%'"+
-		"or component_meta.comp_id like '%%%[1]v%%'"+
-		"or component_meta.port like '%%%[1]v%%'"+
-		"or umc_component_statuses.status_desc like '%%%[1]v%%'"+
-		"or tag_meta.attribute like '%%%[1]v%%'"+
-		"or tag_meta.value like '%%%[1]v%%'", fuzzyKeyword)
-	inst := new(ComponentMeta)
-	db.Joins("JOIN umc_component_statuses ON umc_component_statuses.id=component_meta.comp_id LEFT JOIN tag_meta on component_meta.comp_id=tag_meta.id").
-		Where(fuzzyMatchCondition).
-		First(&inst)
-	json, _ := json.Marshal(inst)
-	fmt.Println(string(json))
+	//fuzzyKeyword := "dd"
+	//fuzzyMatchCondition := fmt.Sprintf("component_meta.server_id like '%%%[1]v%%' "+
+	//	"or component_meta.group_id like '%%%[1]v%%'"+
+	//	"or component_meta.comp_id like '%%%[1]v%%'"+
+	//	"or component_meta.port like '%%%[1]v%%'"+
+	//	"or umc_component_statuses.status_desc like '%%%[1]v%%'"+
+	//	"or tag_meta.attribute like '%%%[1]v%%'"+
+	//	"or tag_meta.value like '%%%[1]v%%'", fuzzyKeyword)
+	//inst := new(ComponentMeta)
+	//db.Joins("JOIN umc_component_statuses ON umc_component_statuses.id=component_meta.comp_id LEFT JOIN tag_meta on component_meta.comp_id=tag_meta.id").
+	//	Where(fuzzyMatchCondition).
+	//	First(&inst)
+	//json, _ := json.Marshal(inst)
+	//fmt.Println(string(json))
+	groupMeta := new(ComponentGroupMeta)
+	groupMeta.GroupId = "groupId1"
+	comMeta := new(ComponentMeta)
+	comMeta.CompId = "compId1"
+	comMeta.Type = "type"
+	groupMeta.ComponentInfo = *comMeta
+	db.AutoMigrate(groupMeta)
+	db.Update(groupMeta)
+	g := new(ComponentGroupMeta)
+	db.Find(g)
+	fmt.Println(g, g.ComponentInfo)
 
 }
