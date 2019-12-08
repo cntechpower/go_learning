@@ -19,14 +19,11 @@ func asyncService() chan string {
 func TestAsyncServices(t *testing.T) {
 	asyncRetCh := asyncService()
 
+	select {
+	case ret := <-asyncRetCh:
+		fmt.Println(ret)
+	case <-time.After(5 * time.Second):
+		fmt.Println("Operation Timeout")
 
-		select {
-		case ret := <-asyncRetCh:
-			//
-		case <-time.After(5 * time.Second):
-			fmt.Println("Operation Timeout")
-
-		}
 	}
-
 }
