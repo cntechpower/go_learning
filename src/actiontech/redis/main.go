@@ -9,6 +9,20 @@ import (
 	//redigo "github.com/gomodule/redigo/redis"
 )
 
+var infos1 = `
+cluster_state:ok
+cluster_slots_assigned:16384
+cluster_slots_ok:16384
+cluster_slots_pfail:0
+cluster_slots_fail:0
+cluster_known_nodes:6
+cluster_size:3
+cluster_current_epoch:8
+cluster_my_epoch:1
+cluster_stats_messages_sent:70406
+cluster_stats_messages_received:69203
+`
+
 var infos = `
 # Server
 #redis_version:3.2.12
@@ -213,18 +227,18 @@ func main() {
 	//	panic(err)
 	//}
 	//conn.Close()
-	infoMap, err := infoToMapParser(infos)
+	infoMap, err := infoToMapParser(infos1)
 	if err != nil {
 		panic(err)
 	}
-	//	for k, _ := range infoMap {
-	//		fmt.Printf(`
-	//"redis:info_all:%v": {
-	//"tags": {},
-	//"enable": true,
-	//"RequiredByUguard": false
-	//},`, k)
-	//	}
-	fmt.Println(len(infoMap))
+	for k, _ := range infoMap {
+		fmt.Printf(`
+	"redis:info_all:%v": {
+	"tags": {},
+	"enable": true,
+	"RequiredByUguard": false
+	},`, k)
+	}
+	//fmt.Println(infoMap)
 
 }
