@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"sync"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -26,19 +27,18 @@ func checkSchemaExist(ip, port, user, pass, schema string) (bool, error) {
 }
 
 func main() {
-	//var wg sync.WaitGroup
-	//maxRunningGoroutine := make(chan struct{}, 5) //hard code default concurrency limit: 5
-	//for i := 0; i < 100; i++ {
-	//	wg.Add(1)
-	//	go func(i int) {
-	//		defer wg.Done()
-	//		maxRunningGoroutine <- struct{}{}
-	//		defer func() { <-maxRunningGoroutine }()
-	//		fmt.Println(i)
-	//		time.Sleep(2 * time.Second)
-	//	}(i)
-	//}
-	//wg.Wait()
-	exist, err := checkSchemaExist("127.0.0.1", "3306", "root", "root", "test")
-	fmt.Printf("isExist: %v, error: %v", exist, err)
+
+	var wg sync.WaitGroup
+	maxRunningGoroutine := make(chan struct{}, 5) //hard code default concurrency limit: 5
+	for i := 0; i < 100; i++ {
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
+			maxRunningGoroutine <- struct{}{}
+			defer func() { <-maxRunningGoroutine }()
+			checkSchemaExist()
+		}(i)
+	}
+	wg.Wait()
+
 }

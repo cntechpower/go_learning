@@ -233,11 +233,12 @@ func main() {
 	}
 	for k, _ := range infoMap {
 		fmt.Printf(`
-	"redis:info_all:%v": {
-	"tags": {},
-	"enable": true,
-	"RequiredByUguard": false
-	},`, k)
+		"redis:cluster_info:%v": {
+		"tags": {},
+		"enable": true,
+		"RequiredByUguard": false
+		},`, k)
+		//fmt.Printf("redis:cluster_info:%v\n", k)
 	}
 	//fmt.Println(infoMap)
 
