@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+
+package testalert;
+service AlertSender {
+    rpc SendAlert (SendAlertInput) returns (Empty);
+}
+
+message SendAlertInput {
+    enum Code {
+        Promote_Fail = 0;
+        Promote_Success = 1;
+    }
+    Code code = 1;
+}
+
+message Empty {
+}
