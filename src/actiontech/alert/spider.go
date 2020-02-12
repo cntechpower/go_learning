@@ -71,7 +71,14 @@ func main() {
 	}
 	parseAlertJson(bs)
 	for _, alert := range alertList {
-		fmt.Printf(`%v code="%v"`, alert.Code, alert.Code)
+		fmt.Printf(`%s Alert= Alert{
+			code:  "%s",
+			level: level_%s,
+		   reference: referencePrefix+codeToAnchor("%s"),
+		}`, strings.ToUpper(alert.Code), strings.ToUpper(alert.Code), alert.Level, strings.ToUpper(alert.Code))
+
+		//fmt.Printf(`"%s": %s,`, alert.Code, alert.Code)
+		////fmt.Printf(`code_%v code="%v"`, alert.Code, alert.Code)
 		fmt.Println()
 	}
 	//if a := getAlertDesc("BIND_SIP_FAILED"); a != nil {
