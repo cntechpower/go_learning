@@ -1,0 +1,22 @@
+go tool objdump -s "main\.main" test>> objdump.out
+
+TEXT main.main(SB) /ssd/code/go_learning/src/go_learning/goNote/objdump/test.go
+  test.go:3		0x458330		64488b0c25f8ffffff	MOVQ FS:0xfffffff8, CX			
+  test.go:3		0x458339		483b6110		CMPQ 0x10(CX), SP			
+  test.go:3		0x45833d		7646			JBE 0x458385				
+  test.go:3		0x45833f		4883ec10		SUBQ $0x10, SP				
+  test.go:3		0x458343		48896c2408		MOVQ BP, 0x8(SP)			
+  test.go:3		0x458348		488d6c2408		LEAQ 0x8(SP), BP			
+  test.go:6		0x45834d		e87e2bfdff		CALL runtime.printlock(SB)		
+  test.go:6		0x458352		48c7042405000000	MOVQ $0x5, 0(SP)			
+  test.go:6		0x45835a		e8f132fdff		CALL runtime.printint(SB)		
+  test.go:6		0x45835f		e8ac2dfdff		CALL runtime.printsp(SB)		
+  test.go:6		0x458364		48c7042403000000	MOVQ $0x3, 0(SP)			
+  test.go:6		0x45836c		e8df32fdff		CALL runtime.printint(SB)		
+  test.go:6		0x458371		e8ea2dfdff		CALL runtime.printnl(SB)		
+  test.go:6		0x458376		e8d52bfdff		CALL runtime.printunlock(SB)		
+  test.go:7		0x45837b		488b6c2408		MOVQ 0x8(SP), BP			
+  test.go:7		0x458380		4883c410		ADDQ $0x10, SP				
+  test.go:7		0x458384		c3			RET					
+  test.go:3		0x458385		e8a697ffff		CALL runtime.morestack_noctxt(SB)	
+  test.go:3		0x45838a		eba4			JMP main.main(SB)			

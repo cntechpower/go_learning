@@ -1,0 +1,24 @@
+TEXT main.main(SB) /ssd/code/go_learning/src/go_learning/goNote/inline/inline.go
+  inline.go:10		0x4914f0		64488b0c25f8ffffff	MOVQ FS:0xfffffff8, CX			
+  inline.go:10		0x4914f9		483b6110		CMPQ 0x10(CX), SP			
+  inline.go:10		0x4914fd		765a			JBE 0x491559				
+  inline.go:10		0x4914ff		4883ec48		SUBQ $0x48, SP				
+  inline.go:10		0x491503		48896c2440		MOVQ BP, 0x40(SP)			
+  inline.go:10		0x491508		488d6c2440		LEAQ 0x40(SP), BP			
+  inline.go:11		0x49150d		e88effffff		CALL main.test(SB)			
+  inline.go:11		0x491512		488b0424		MOVQ 0(SP), AX				
+  inline.go:12		0x491516		0f57c0			XORPS X0, X0				
+  inline.go:12		0x491519		0f11442430		MOVUPS X0, 0x30(SP)			
+  inline.go:12		0x49151e		488d0dfb950000		LEAQ 0x95fb(IP), CX			
+  inline.go:12		0x491525		48894c2430		MOVQ CX, 0x30(SP)			
+  inline.go:12		0x49152a		4889442438		MOVQ AX, 0x38(SP)			
+  inline.go:12		0x49152f		488d442430		LEAQ 0x30(SP), AX			
+  inline.go:12		0x491534		48890424		MOVQ AX, 0(SP)				
+  inline.go:12		0x491538		48c744240801000000	MOVQ $0x1, 0x8(SP)			
+  inline.go:12		0x491541		48c744241001000000	MOVQ $0x1, 0x10(SP)			
+  inline.go:12		0x49154a		e8b199ffff		CALL fmt.Println(SB)			
+  inline.go:14		0x49154f		488b6c2440		MOVQ 0x40(SP), BP			
+  inline.go:14		0x491554		4883c448		ADDQ $0x48, SP				
+  inline.go:14		0x491558		c3			RET					
+  inline.go:10		0x491559		e88285fcff		CALL runtime.morestack_noctxt(SB)	
+  inline.go:10		0x49155e		eb90			JMP main.main(SB)			
