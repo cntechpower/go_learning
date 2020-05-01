@@ -380,6 +380,7 @@
     "github.com/siddontang/go-mysql/replication",
     "github.com/smartystreets/goconvey/convey",
     "github.com/spf13/cobra",
+    "github.com/spf13/pflag",
     "golang.org/x/net/context",
     "google.golang.org/grpc",
   ]
