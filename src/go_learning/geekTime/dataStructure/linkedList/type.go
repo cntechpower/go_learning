@@ -12,7 +12,7 @@ type SingleLinkedListNode struct {
 
 type SingleLinkedList struct {
 	head *SingleLinkedListNode
-	len  int64
+	len  uint64
 }
 
 func NewSingleLinkedList() *SingleLinkedList {
@@ -104,4 +104,15 @@ func (l *SingleLinkedList) String() string {
 	}
 	builder.WriteString("}")
 	return builder.String()
+}
+
+func (l *SingleLinkedList) FindNodeByIndex(index uint64) *SingleLinkedListNode {
+	if index >= l.len {
+		return nil
+	}
+	node := l.head.next
+	for i := uint64(0); i < index; i++ {
+		node = node.next
+	}
+	return node
 }
