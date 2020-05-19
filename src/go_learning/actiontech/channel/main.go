@@ -5,16 +5,37 @@ import (
 	"time"
 )
 
-func do() {
+func doWithStop(closeChan chan struct{}) {
 	for {
-		fmt.Println(time.Now().Format(time.RFC3339))
-		time.Sleep(1 * time.Second)
+		select {
+		case <-closeChan:
+			return
+		default:
+			fmt.Println("doWithStop: " + time.Now().Format(time.RFC3339))
+			time.Sleep(1 * time.Second)
+		}
 	}
-
 }
 
-func test(closeChan chan struct{}) {
-	go do()
+func testWithStop(closeChan chan struct{}) {
+	innerCloseChan := make(chan struct{}, 0)
+	defer close(innerCloseChan)
+	go doWithStop(innerCloseChan)
+	select {
+	case <-closeChan:
+		return
+	}
+}
+
+func doWithoutStop() {
+	for {
+		fmt.Println("doWithoutStop: " + time.Now().Format(time.RFC3339))
+		time.Sleep(1 * time.Second)
+	}
+}
+
+func testWithoutStop(closeChan chan struct{}) {
+	go doWithoutStop()
 	select {
 	case <-closeChan:
 		return
@@ -22,11 +43,18 @@ func test(closeChan chan struct{}) {
 }
 
 func main() {
-	fmt.Println("starting test...")
+	fmt.Println("starting testWithStop...")
 	closeChan := make(chan struct{}, 0)
-	go test(closeChan)
+	go testWithStop(closeChan)
 	time.Sleep(10 * time.Second)
-	fmt.Println("stopping test...")
-	close(closeChan)
+	fmt.Println("stopping testWithStop...")
+	close(closeChan) //inner goroutine will stop
+
+	fmt.Println("starting testWithoutStop...")
+	closeChan2 := make(chan struct{}, 0)
+	go testWithoutStop(closeChan2)
+	time.Sleep(10 * time.Second)
+	fmt.Println("stopping testWithoutStop...")
+	close(closeChan2) //inner goroutine won't stop
 	time.Sleep(10 * time.Second)
 }
