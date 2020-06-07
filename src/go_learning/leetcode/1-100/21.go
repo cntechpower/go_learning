@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go_learning/others/TheWayToGo/chapter_11/20171226/sort"
 	"strconv"
 )
 
@@ -11,6 +12,7 @@ type ListNode struct {
 }
 
 func (l *ListNode) String() string {
+	sort.Sort()
 	res := ""
 	for l1 := l; l1 != nil; l1 = l1.Next {
 		res += strconv.Itoa(l1.Val)
