@@ -78,8 +78,5 @@ func quickSort(list []int, isAsc bool) {
 }
 
 func main() {
-	l1 := testUtil.NewRandomList(15)
-	testUtil.checkSorted(l1, true)
-	quickSort(l1, true)
-	testUtil.checkSorted(l1, true)
+	testUtil.Wrapper(quickSort)
 }

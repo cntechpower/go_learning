@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go_learning/algorithms4th/sort/testUtil"
 	"math"
 )
 
@@ -16,12 +17,16 @@ func merge(list []int, lo, mid, hi int, isAsc bool) {
 	}
 	for k := lo; k <= hi; k++ {
 		if i > mid {
+			// [lo:mid] is empty, just append [mid:hi] to result
 			list[k] = tmp[j]
 			j++
 		} else if j > hi {
+			// [mid:hi] is empty, just append [lo:mid] to result
 			list[k] = tmp[i]
 			i++
+
 		} else if (isAsc && tmp[i] < tmp[j]) || (!isAsc && tmp[i] > tmp[j]) {
+			// both not empty, append bigger object to result
 			list[k] = tmp[i]
 			i++
 		} else {
@@ -36,7 +41,7 @@ func sort(list []int, lo, hi int, isAsc bool) {
 		return
 	}
 	mid := lo + (hi-lo)/2
-	fmt.Printf("sorting lo=%v,mid=%v,hi=%v\n", lo, mid, hi)
+	//fmt.Printf("sorting lo=%v,mid=%v,hi=%v\n", lo, mid, hi)
 	sort(list, lo, mid, isAsc)
 	sort(list, mid+1, hi, isAsc)
 	merge(list, lo, mid, hi, isAsc)
@@ -44,7 +49,6 @@ func sort(list []int, lo, hi int, isAsc bool) {
 func mergeSort(list []int, isAsc bool) {
 	tmp = make([]int, len(list))
 	sort(list, 0, len(list)-1, isAsc)
-
 }
 
 func mergeSortBottomUp(list []int, isAsc bool) {
@@ -60,31 +64,5 @@ func mergeSortBottomUp(list []int, isAsc bool) {
 }
 
 func main() {
-	//list := []int{1, 3, 4, 5, 2, 6, 7, 3, 9}
-	//listSorted := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	//mergeSort(list, true)
-	//fmt.Println(list)
-	//mergeSort(listSorted, true)
-	//fmt.Println(listSorted)
-	//
-	//list = []int{1, 3, 4, 5, 2, 6, 7, 3, 9}
-	//listSorted = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	//mergeSort(list, false)
-	//fmt.Println(list)
-	//mergeSort(listSorted, false)
-	//fmt.Println(listSorted)
-	list := []int{1, 3, 4, 5, 2, 6, 7, 3, 9}
-	listSorted := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	mergeSortBottomUp(list, true)
-	fmt.Println(list)
-	mergeSortBottomUp(listSorted, true)
-	fmt.Println(listSorted)
-
-	list = []int{1, 3, 4, 5, 2, 6, 7, 3, 9}
-	listSorted = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	mergeSortBottomUp(list, false)
-	fmt.Println(list)
-	mergeSortBottomUp(listSorted, false)
-	fmt.Println(listSorted)
-
+	testUtil.Wrapper(mergeSort)
 }
