@@ -1,0 +1,90 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+var tmp []int
+
+func merge(list []int, lo, mid, hi int, isAsc bool) {
+	i := lo
+	j := mid + 1
+	//tmp := make([]int, 0, hi-lo)
+	for k := lo; k <= hi; k++ {
+		tmp[k] = list[k]
+	}
+	for k := lo; k <= hi; k++ {
+		if i > mid {
+			list[k] = tmp[j]
+			j++
+		} else if j > hi {
+			list[k] = tmp[i]
+			i++
+		} else if (isAsc && tmp[i] < tmp[j]) || (!isAsc && tmp[i] > tmp[j]) {
+			list[k] = tmp[i]
+			i++
+		} else {
+			list[k] = tmp[j]
+			j++
+		}
+	}
+}
+
+func sort(list []int, lo, hi int, isAsc bool) {
+	if hi <= lo {
+		return
+	}
+	mid := lo + (hi-lo)/2
+	fmt.Printf("sorting lo=%v,mid=%v,hi=%v\n", lo, mid, hi)
+	sort(list, lo, mid, isAsc)
+	sort(list, mid+1, hi, isAsc)
+	merge(list, lo, mid, hi, isAsc)
+}
+func mergeSort(list []int, isAsc bool) {
+	tmp = make([]int, len(list))
+	sort(list, 0, len(list)-1, isAsc)
+
+}
+
+func mergeSortBottomUp(list []int, isAsc bool) {
+	n := len(list)
+	tmp = make([]int, len(list))
+	for size := 1; size < n; size = size * 2 {
+		for lo := 0; lo < n-size; lo += size * 2 {
+			fmt.Printf("merging lo=%v,mid=%v,hi=%v\n", lo, lo+size-1, int(math.Min(float64(lo+size+size-1), float64(n-1))))
+			merge(list, lo, lo+size-1, int(math.Min(float64(lo+size+size-1), float64(n-1))), isAsc)
+		}
+	}
+
+}
+
+func main() {
+	//list := []int{1, 3, 4, 5, 2, 6, 7, 3, 9}
+	//listSorted := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	//mergeSort(list, true)
+	//fmt.Println(list)
+	//mergeSort(listSorted, true)
+	//fmt.Println(listSorted)
+	//
+	//list = []int{1, 3, 4, 5, 2, 6, 7, 3, 9}
+	//listSorted = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	//mergeSort(list, false)
+	//fmt.Println(list)
+	//mergeSort(listSorted, false)
+	//fmt.Println(listSorted)
+	list := []int{1, 3, 4, 5, 2, 6, 7, 3, 9}
+	listSorted := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	mergeSortBottomUp(list, true)
+	fmt.Println(list)
+	mergeSortBottomUp(listSorted, true)
+	fmt.Println(listSorted)
+
+	list = []int{1, 3, 4, 5, 2, 6, 7, 3, 9}
+	listSorted = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	mergeSortBottomUp(list, false)
+	fmt.Println(list)
+	mergeSortBottomUp(listSorted, false)
+	fmt.Println(listSorted)
+
+}
