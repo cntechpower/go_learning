@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go_learning/algorithms4th/sort/testUtil"
 	"math/rand"
 	"time"
 )
@@ -77,8 +78,8 @@ func quickSort(list []int, isAsc bool) {
 }
 
 func main() {
-	l1 := NewRandomList(10)
+	l1 := testUtil.NewRandomList(15)
+	testUtil.checkSorted(l1, true)
 	quickSort(l1, true)
-	print(l1)
-	fmt.Println(IsSorted(l1, true))
+	testUtil.checkSorted(l1, true)
 }
