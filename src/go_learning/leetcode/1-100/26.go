@@ -2,27 +2,6 @@ package main
 
 import "fmt"
 
-//160ms,4.6MB
-func removeDuplicates2(nums []int) int {
-	length := len(nums)
-	for i := 0; i < length; i++ {
-		if i > len(nums) {
-			break
-		}
-		for j := i + 1; j < length; j++ {
-			if j >= len(nums) {
-				break
-			}
-			for j < len(nums) && nums[i] == nums[j] {
-				//fmt.Printf("removing nums[%v]: %v\n", i, nums[i])
-				nums = append(nums[:i], nums[i+1:]...)
-			}
-		}
-	}
-	fmt.Println(nums)
-	return len(nums)
-}
-
 func removeDuplicates(nums []int) int {
 	if len(nums) <= 1 {
 		return len(nums)
