@@ -227,6 +227,7 @@ func main() {
 		caps, err := GetCap(os.Getpid())
 		if err != nil {
 			fmt.Printf("ERR: %v\n", err.Error())
+			os.Exit(-1)
 		}
 		uintCaps := make([]uintptr, 0)
 		for _, cap := range caps.Data {
