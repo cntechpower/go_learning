@@ -11,6 +11,7 @@ import (
 
 var command string
 var arg string
+var keepCaps bool
 
 const (
 	LINUX_CAPABILITY_VERSION_3 = 0x20080522
@@ -216,21 +217,25 @@ func GetCap(pid int) (*Cap, error) {
 }
 func main() {
 	flag.StringVar(&command, "c", "ls", "command to exec")
-	flag.StringVar(&arg, "a", "", "command args")
+	flag.BoolVar(&keepCaps, "k", true, "keep caps")
 	flag.Parse()
-	cmd := exec.Command(command, arg)
+	//cmd := exec.Command(command, arg)
+	cmd := exec.Command("bash", "--noprofile", "--norc", "-c", command)
 	caps, err := GetCap(os.Getpid())
 	if err != nil {
 		fmt.Printf("ERR: %v\n", err.Error())
 	} else {
-		uintCaps := make([]uintptr, 0)
-		for _, cap := range caps.Data {
-			for _, capInt := range DecodeCaps(cap.Effective) {
-				uintCaps = append(uintCaps, uintptr(capInt))
+		if keepCaps {
+			fmt.Println("setting caps...")
+			uintCaps := make([]uintptr, 0)
+			for _, cap := range caps.Data {
+				for _, capInt := range DecodeCaps(cap.Effective) {
+					uintCaps = append(uintCaps, uintptr(capInt))
+				}
 			}
-		}
-		cmd.SysProcAttr = &builtin_syscall.SysProcAttr{
-			AmbientCaps: uintCaps,
+			cmd.SysProcAttr = &builtin_syscall.SysProcAttr{
+				AmbientCaps: uintCaps,
+			}
 		}
 	}
 	bs, err := cmd.CombinedOutput()
