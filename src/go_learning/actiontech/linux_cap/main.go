@@ -221,23 +221,24 @@ func main() {
 	flag.Parse()
 	//cmd := exec.Command(command, arg)
 	cmd := exec.Command("bash", "--noprofile", "--norc", "-c", command)
-	caps, err := GetCap(os.Getpid())
-	if err != nil {
-		fmt.Printf("ERR: %v\n", err.Error())
-	} else {
-		if keepCaps {
-			fmt.Println("setting caps...")
-			uintCaps := make([]uintptr, 0)
-			for _, cap := range caps.Data {
-				for _, capInt := range DecodeCaps(cap.Effective) {
-					uintCaps = append(uintCaps, uintptr(capInt))
-				}
-			}
-			cmd.SysProcAttr = &builtin_syscall.SysProcAttr{
-				AmbientCaps: uintCaps,
+
+	if keepCaps {
+		fmt.Println("setting caps...")
+		caps, err := GetCap(os.Getpid())
+		if err != nil {
+			fmt.Printf("ERR: %v\n", err.Error())
+		}
+		uintCaps := make([]uintptr, 0)
+		for _, cap := range caps.Data {
+			for _, capInt := range DecodeCaps(cap.Effective) {
+				uintCaps = append(uintCaps, uintptr(capInt))
 			}
 		}
+		cmd.SysProcAttr = &builtin_syscall.SysProcAttr{
+			AmbientCaps: uintCaps,
+		}
 	}
+
 	bs, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Printf("ERR: %v\n", err.Error())
