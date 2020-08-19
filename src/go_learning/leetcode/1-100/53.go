@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+)
 
 func maxSubArray(nums []int) int {
 	if len(nums) == 0 {
@@ -57,6 +60,8 @@ func main() {
 	fmt.Println(maxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
 	fmt.Println(maxSubArray([]int{1}))
 	fmt.Println(maxSubArrayWithOutput([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
+	runtime.GC()
+	runtime.Gosched()
 
 	t := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
 	fmt.Println(t[3:6])
