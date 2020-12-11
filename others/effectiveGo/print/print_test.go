@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
 type a struct {
@@ -9,7 +10,7 @@ type a struct {
 	age  int
 }
 
-func main() {
+func TestPrint(t *testing.T) {
 	a1 := a{
 		name: "dujinyang",
 		age:  23,
