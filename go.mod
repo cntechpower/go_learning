@@ -17,6 +17,7 @@ require (
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/hpcloud/tail v1.0.1-0.20180514194441-a1dbeea552b7
 	github.com/ikarishinjieva/go-gtid v0.0.0-20171107091452-35d66d01d6fa
+	github.com/ipipdotnet/ipdb-go v1.3.1
 	github.com/jinzhu/gorm v1.9.12
 	github.com/jmoiron/sqlx v1.2.0 // indirect
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible // indirect

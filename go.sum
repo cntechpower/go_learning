@@ -149,6 +149,8 @@ github.com/ikarishinjieva/go-gtid v0.0.0-20171107091452-35d66d01d6fa h1:B2kdM+37
 github.com/ikarishinjieva/go-gtid v0.0.0-20171107091452-35d66d01d6fa/go.mod h1:cbqwp9UfQ1dwQ/4/FFPpkfIoJGTTAHL9dU2qKzt9GA8=
 github.com/inconshreveable/mousetrap v1.0.0 h1:Z8tu5sraLXCXIcARxBp/8cbvlwVa7Z1NHg9XEKhtSvM=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
+github.com/ipipdotnet/ipdb-go v1.3.1 h1:iMTt7a4o8r5FmTMzuHLg8XPtz8vb06gpEzJVSZzDZMY=
+github.com/ipipdotnet/ipdb-go v1.3.1/go.mod h1:yZ+8puwe3R37a/3qRftXo40nZVQbxYDLqls9o5foexs=
 github.com/jinzhu/gorm v1.9.12 h1:Drgk1clyWT9t9ERbzHza6Mj/8FY/CqMyVzOiHviMo6Q=
 github.com/jinzhu/gorm v1.9.12/go.mod h1:vhTjlKSJUTWNtcbQtrMBFCxy7eXTzeCAzfL5fBZT/Qs=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=
