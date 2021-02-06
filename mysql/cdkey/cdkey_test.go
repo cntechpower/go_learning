@@ -32,7 +32,6 @@ WHERE
 LIMIT
   1;`
 
-
 //go test -count 1 -v .
 func TestCdkey(t *testing.T) {
 	dsn := "admin:admin@(10.0.0.2:3306)/test?autocommit=1&multiStatements=true&loc=Local"
@@ -98,7 +97,7 @@ func TestCdkey(t *testing.T) {
 		}
 		spend := time.Since(ts).Milliseconds()
 		if spend >= 20 {
-			t.Logf("ms spend: %v", spend)
+			t.Logf("send for bnj No %v ms spend: %v", i, spend)
 		}
 	}
 
@@ -110,7 +109,7 @@ func TestCdkey(t *testing.T) {
 		}
 		spend := time.Since(ts).Milliseconds()
 		if spend >= 20 {
-			t.Logf("ms spend: %v", spend)
+			t.Logf("send for cheers No %v ms spend: %v", i, spend)
 		}
 	}
 
