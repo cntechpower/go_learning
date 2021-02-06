@@ -11,7 +11,7 @@ require (
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/go-openapi/errors v0.19.3
 	github.com/go-sql-driver/mysql v1.5.0
-	github.com/golang/protobuf v1.4.2
+	github.com/golang/protobuf v1.4.3
 	github.com/golang/snappy v0.0.2 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
@@ -47,11 +47,10 @@ require (
 	github.com/unrolled/render v1.0.3 // indirect
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a // indirect
 	golang.org/x/net v0.0.0-20201202161906-c7110b5ffcbb
-	google.golang.org/genproto v0.0.0-20200225123651-fc8f55426688 // indirect
-	google.golang.org/grpc v1.27.1
-	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
+	google.golang.org/grpc v1.27.0
 	gopkg.in/fsnotify/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200605160147-a5ece683394c // indirect
+	k8s.io/apimachinery v0.20.2
 )
 
 replace (
