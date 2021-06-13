@@ -9,4 +9,5 @@ import (
 func TestStrings(t *testing.T) {
 	cidrs := strings.Split("", ",")
 	fmt.Println(len(cidrs))
+	fmt.Println(cidrs[0] == "")
 }
