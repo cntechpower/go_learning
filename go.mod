@@ -37,6 +37,7 @@ require (
 	github.com/shopspring/decimal v1.1.0 // indirect
 	github.com/siddontang/go-log v0.0.0-20190221022429-1e957dd83bed
 	github.com/siddontang/go-mysql v1.1.0
+	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/smartystreets/assertions v0.0.0-20190401211740-f487f9de1cd3 // indirect
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/spf13/cobra v0.0.6
